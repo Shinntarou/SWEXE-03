@@ -1,0 +1,12 @@
+
+<% @tweets.each do |i| %>
+    <p>
+        <%= i.message %>
+        <%= ((@now - i.tdate)/60).floor %>
+        <%= link_to '削除', "/tweets/#{i.id}", method: :delete %>
+        <%= link_to '表示', "/tweets/#{i.id}" %>
+        <%= link_to '編集', "/tweets/#{i.id}/edit" %>
+    </p>
+    
+<% end %>
+<p><%= link_to 'つぶやく', '/tweets/new' %></p>
